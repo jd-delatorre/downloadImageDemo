@@ -26,4 +26,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btnGetImage:(id)sender {
+    NSString *urlString = @"http://mlk-quotes.appspot.com/mlk.jpg";  //create url into string
+    NSURL *url = [NSURL URLWithString:urlString];   //go to url 
+    
+    NSData *imageData = [[NSData alloc]initWithContentsOfURL:url];
+    
+    //creating the actual image
+    _imgPic.image = [UIImage imageWithData: imageData];
+}
 @end
